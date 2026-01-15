@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+#define ll long long
+#define cy cout << "YES\n"
+#define cn cout << "NO\n"
+#define nl "\n"
+#define ar(v) v.begin(), v.end()
+#define rar(v) v.rbegin(), v.rend()
+#define fl(k,g) for(ll i=k;i<g;i++)
+#define fl2(o,p) for(ll j=o;j<p;j++)
+#define pb   push_back
+#define pob  pop_back
+typedef vector<ll>vi;
+typedef vector<string>ss;
+/*void turu_love()*/
+int main()
+{  ios_base::sync_with_stdio(false);
+   cin.tie(nullptr);
+   ll n;   cin>>n;
+   while(n--){
+    ll s,k,m;   cin>>s>>k>>m;
+    ll mod=m%k;
+    ll div=m/k;
+    ll p=min(s,k);
+    ll ans;
+ 
+    if(s<=k)
+        ans=s-mod;
+ 
+    else
+    { if(div%2==0)
+        ans=s-mod;
+      else ans=k-mod;
+    }
+ 
+    if(ans<0)
+        ans=0;
+ 
+    cout<<ans<<nl;
+}
+}
