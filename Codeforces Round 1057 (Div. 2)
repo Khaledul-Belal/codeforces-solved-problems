@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+using namespace std;
+#define ll long long
+#define endl '\n'
+#define cy cout << "YES\n"
+#define cn cout << "NO\n"
+#define nl "\n"
+int main()
+{  ios_base::sync_with_stdio(false);
+   cin.tie(nullptr);
+ 
+   ll n;   cin>>n;
+   while(n--){
+  	ll x,y,z;     cin>>x>>y>>z;
+    //ll jog=x+y+z;
+    //if(jog%2==1)cy;
+    //else cn;
+  	
+  	if((x&y)==(y&z) && (y&z)==(x&z))
+        cy;
+  	
+  	else cn;
+ 
+  }
+}
