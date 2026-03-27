@@ -1,0 +1,157 @@
+B. Heapify 1
+time limit per test2 seconds
+memory limit per test256 megabytes
+
+You are given a permutation a
+ of length n
+∗
+.
+
+You can perform the following operation any number of times (possibly zero):
+
+Select an index i
+ (1≤i≤n2
+), and swap ai
+ and a2i
+.
+For example, when a=[1,4,2,3,5]
+, you can swap a2
+ and a4
+ to make it [1,3,2,4,5]
+, but you cannot swap a2
+ and a3
+.
+
+Please determine if the sequence a
+ can be sorted in increasing order.
+
+∗
+A permutation of length n
+ is an array consisting of n
+ distinct integers from 1
+ to n
+ in arbitrary order. For example, [2,3,1,5,4]
+ is a permutation, but [1,2,2]
+ is not a permutation (2
+ appears twice in the array), and [1,3,4]
+ is also not a permutation (n=3
+ but there is 4
+ in the array).
+
+Input
+Each test contains multiple test cases. The first line contains the number of test cases t
+ (1≤t≤104
+). The description of the test cases follows.
+
+The first line of each test case contains a single integer n
+ (1≤n≤2⋅105
+).
+
+The second line of each test case contains n
+ distinct integers a1,a2,…,an
+ (1≤ai≤n
+).
+
+It is guaranteed that the sum of n
+ over all test cases does not exceed 2⋅105
+.
+
+Output
+If a
+ can be sorted in increasing order, output "YES" on a separate line. Otherwise, output "NO" on a separate line.
+
+You can output the answer in any case. For example, the strings "yEs", "yes", and "Yes" will also be recognized as positive responses.
+
+Example
+Input
+2
+5
+1 4 3 2 5
+5
+1 4 2 3 5
+Output
+YES
+NO
+
+
+Note
+In the first test case, a
+ is [1,4,3,2,5]
+. You can sort a
+ in increasing order by swapping a2
+ and a4
+. Therefore, the answer is "YES".
+
+In the second test case, a
+ is [1,4,2,3,5]
+. It is impossible to sort a
+ in increasing order. Therefore, the answer is "NO".
+
+
+
+
+
+
+
+
+code:
+
+
+#include<bits/stdc++.h>
+#include<algorithm>
+#include<iostream>
+#include<set>
+using namespace std;
+#define ll long long
+#define endl '\n'
+#define cy cout << "YES\n"
+#define cn cout << "NO\n"
+#define nl "\n"
+#define ar(v) v.begin(), v.end()
+#define rar(v) v.rbegin(), v.rend()
+#define fl(k,g) for(ll i=k;i<=g;i++)
+#define fl2(o,p) for(ll j=o;j<p;j++)
+#define pb   push_back
+#define pob  pop_back
+typedef set<ll>Booyah;
+typedef vector<ll>turu_love;
+typedef pair<ll,ll>shirai_shirai_rokto;
+typedef map<ll,ll>coding_er_vhokto;
+/*
+*/
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll n;   cin>>n;
+    while(n--){
+         ll x;    cin>>x;
+         turu_love v(x+1);
+         Booyah s;
+         fl(1,x){
+            cin>>v[i];
+         }
+    bool f=true;
+         fl(1,x){
+          ll a=i;
+ 
+          while(a%2==0)a/=2;
+          while(v[i]%2==0)
+            v[i]/=2;
+ 
+          if(a!=v[i]){
+            f=false;
+          break;
+         }
+        }
+ 
+         if(f)cy;
+         else cn;
+ 
+        // if((v[1]-v[0])==v[2])cy;
+        // else cn;
+    }
+}
+ 
+
+
