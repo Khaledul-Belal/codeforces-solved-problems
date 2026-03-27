@@ -1,0 +1,105 @@
+A. Sieve of Erato67henes
+time limit per test1 second
+memory limit per test256 megabytes
+You are given n
+ positive integers a1,a2,…,an
+.
+
+Please determine if it is possible to select any number of elements in a
+, so that their product is 67
+.
+
+Note that you may not select zero elements, as the product of zero elements is not defined in this problem.
+
+Input
+Each test contains multiple test cases. The first line contains the number of test cases t
+ (1≤t≤104
+). The description of the test cases follows.
+
+The first line of each test case contains a single integer n
+ (1≤n≤5
+).
+
+The second line of each test case contains n
+ positive integers a1,a2,…,an
+ (1≤ai≤67
+).
+
+Output
+If it is possible to select elements so that their product is 67
+, output "YES" on one line. Otherwise, output "NO" on one line.
+
+You can output the answer in any case. For example, the strings "yEs", "yes", and "Yes" will also be recognized as positive responses.
+
+Example
+Input
+2
+5
+1 7 6 7 67
+5
+1 3 5 7 8
+Output
+YES
+NO
+
+Note
+In the first test case, you can select a1
+ and a5
+ to get a1⋅a5=1⋅67=67
+.
+
+In the second test case, it is impossible to select any number of elements so that their product is 67
+.
+
+
+
+
+
+
+
+
+code:
+
+
+#include<bits/stdc++.h>
+#include<algorithm>
+#include<iostream>
+#include<set>
+using namespace std;
+#define ll long long
+#define endl '\n'
+#define cy cout << "YES\n"
+#define cn cout << "NO\n"
+#define nl "\n"
+#define ar(v) v.begin(), v.end()
+#define rar(v) v.rbegin(), v.rend()
+#define fl(k,g) for(ll i=k;i<g;i++)
+#define fl2(o,p) for(ll j=o;j<p;j++)
+#define pb   push_back
+#define pob  pop_back
+typedef set<ll>Booyah;
+typedef vector<ll>turu_love;
+typedef pair<ll,ll>shirai_shirai_rokto;
+typedef map<ll,ll>coding_er_vhokto;
+/*
+*/
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll n;   cin>>n;
+    while(n--){
+         ll x;    cin>>x;
+         turu_love v(x);
+         Booyah s;
+         fl(0,x){
+            cin>>v[i];
+            s.insert(v[i]);
+         }
+ 
+         if(s.find(67)!=s.end())cy;
+         else cn;
+ 
+    }
+}
+
