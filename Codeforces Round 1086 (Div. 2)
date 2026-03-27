@@ -1,0 +1,135 @@
+A. Bingo Candies
+time limit per test1 second
+memory limit per test256 megabytes
+
+Alice has a magic board. The board is described as a n×n
+ grid; each tile has a colored candy in it. The color of the candy in the i
+-th row, j
+-th column is ai,j
+.
+
+Bob wants to know if he can rearrange the board in some way so that no row or column consists of n
+ candies of the same color.
+
+Your task is to determine whether such a rearrangement exists.
+
+Input
+Each test contains multiple test cases. The first line contains the number of test cases t
+ (1≤t≤500
+). The description of the test cases follows.
+
+The first line of each test case contains an integer n
+ (1≤n≤100
+), denoting the size of the board.
+
+The following n
+ lines contain n
+ integers each; the j
+-th integer on the i
+-th line is ai,j
+ (1≤ai,j≤n2
+), denoting the color of candies on the board.
+
+It is guaranteed that the sum of n
+ over all test cases does not exceed 500
+.
+
+Output
+For each test case, print "YES" if a valid rearrangement exists, and "NO" otherwise.
+
+You can output the answer in any case (upper or lower). For example, the strings "yEs", "yes", "Yes", and "YES" will be recognized as positive responses.
+
+Example
+Input
+3
+3
+1 2 3
+3 1 4
+4 1 2
+3
+1 1 1
+2 3 4
+1 4 3
+3
+1 1 1
+1 1 1
+1 1 2
+Output
+YES
+YES
+NO
+
+Note
+In the first test case, no row or column consists of all candies with the same color; the board can be left as it is.
+
+In the second test case, the first row consists of all candies of color 1
+. The board can be rearranged by swapping a1,1
+ with a2,1
+. After the rearrangement, the board becomes
+211134143
+Now no row or column consists of all candies with the same color.
+
+In the third test case, no matter how the board is rearranged, there will always be at least one row or column consisting of all candies of color 1
+. Therefore, there is no valid rearrangement.
+
+
+
+
+
+code:
+
+#include<numeric>
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+#define ll long long
+#define endl '\n'
+#define cy cout << "YES\n"
+#define cn cout << "NO\n"
+#define nl "\n"
+#define ar(v) v.begin(), v.end()
+#define rar(v) v.rbegin(), v.rend()
+#define fl(k,g) for(ll i=k;i<g;i++)
+#define fl2(o,p) for(ll j=o;j<p;j++)
+#define pb   push_back()
+#define pob  pop_back()
+typedef vector<ll>turu_love;
+typedef vector<string>Booyah;
+typedef pair<ll,ll>shirai_shirai_rokto;
+typedef map<string,string>coding_er_vhokto;
+int main(){
+   ios_base::sync_with_stdio(false);
+   cin.tie(nullptr);
+   ll n;      cin>>n;
+   while(n--){
+        ll x;   cin>>x;
+        vector<vector<ll>>v(x,vector<ll>(x));
+ 
+     fl(0,x){
+        fl2(0,x){
+      cin>>v[i][j];
+        }
+     }
+ 
+     map<ll,ll>fre;
+ 
+     fl(0,x){
+        fl2(0,x){
+          fre[v[i][j]]++;
+        }
+     }
+ bool f=false;
+  for(auto p:fre){
+    if(p.second>x*(x-1)){
+        f=true;
+        break;
+    }
+  }
+ 
+  if(f)cn;
+  else cy;
+   }
+}
+ 
+
+
